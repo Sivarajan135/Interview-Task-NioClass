@@ -1,0 +1,52 @@
+.container
+{
+    height: 100vh;
+    background-color: rgb(224, 250, 241);
+}
+.Questions
+{
+    display: flex;
+    width: 100%;
+}
+h3
+{
+    width: 35%;
+    padding: 30px;
+    margin-bottom: 50px;
+    background-color: rgb(245, 217, 226);
+    cursor: pointer;
+    text-decoration: none;
+    margin-top: 10px;
+    color: rgb(8, 5, 0);
+}
+.active
+{
+    background-color: rgb(204, 224, 242);
+    border-bottom: 3px solid rgb(129, 198, 236);
+}
+h3:hover
+{
+    box-shadow: 0px 0px 2px 2px rgb(204, 224, 242);
+}
+.individualQuestion
+{
+    padding: 30px;
+    margin: 80px;
+    font-size: 25px;
+    box-shadow: 0px 0px 10px 4px rgb(70, 89, 99);
+}
+
+@media all and (max-width: 480px) {
+    .container
+    {
+        height: 150vh;
+        width: 100%;
+    }
+    .individualQuestion
+    {
+    padding: 20px;
+    margin: 80px;
+    font-size: 13px;
+    box-shadow: 0px 0px 10px 4px rgb(70, 89, 99);
+    }
+}
