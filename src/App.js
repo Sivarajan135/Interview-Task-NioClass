@@ -49,15 +49,12 @@ const App = () => {
     return (
         <div className='container'>
             <MathJaxContext>
-
-                {/*Question Navigation*/}
                 <nav className='Questions'>
                   <h3 onClick={handleQuestion} className='active'>Question 1</h3>
                   <h3 onClick={handleQuestion}>Question 2</h3>
                   <h3 onClick={handleQuestion}>Question 3</h3>
                 </nav>
 
-                {/* Render the question Not a Mathjax*/}
                 <MathJax>
                     <div className='individualQuestion'>{question}</div>
                 </MathJax>
