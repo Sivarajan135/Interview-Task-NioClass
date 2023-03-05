@@ -11,6 +11,11 @@ const App = () => {
     const [index, setindex] = useState(0);
     let id = questionID[index];
     const [question, setQuestion] = useState("");
+    const [active , setActive] = useState({
+       Question1 : 'active',
+       Question2 : '',
+       Question3 : ''
+    })
 
     //Fetched
     useEffect(() => {
@@ -24,25 +29,31 @@ const App = () => {
         {
           setindex(0);
           //Set the active question
-          document.querySelector('.Questions').children[0].className = 'active'
-          document.querySelector('.Questions').children[1].className = ''
-          document.querySelector('.Questions').children[2].className = ''
+          setActive({
+            Question1 : 'active',
+            Question2 : '',
+            Question3 : ''
+          })
         }
         else if(e.target.innerText === 'Question 2')
         {
           setindex(1);
           //Set the active question
-          document.querySelector('.Questions').children[0].className = ''
-          document.querySelector('.Questions').children[1].className = 'active'
-          document.querySelector('.Questions').children[2].className = ''
+          setActive({
+            Question1 : '',
+            Question2 : 'active',
+            Question3 : ''
+          })
         }
         else
         {
           setindex(2);
           //Set the active question
-          document.querySelector('.Questions').children[0].className = ''
-          document.querySelector('.Questions').children[1].className = ''
-          document.querySelector('.Questions').children[2].className = 'active'
+          setActive({
+            Question1 : '',
+            Question2 : '',
+            Question3 : 'active'
+          })
         }
     }
 
@@ -50,9 +61,9 @@ const App = () => {
         <div className='container'>
             <MathJaxContext>
                 <nav className='Questions'>
-                  <h3 onClick={handleQuestion} className='active'>Question 1</h3>
-                  <h3 onClick={handleQuestion}>Question 2</h3>
-                  <h3 onClick={handleQuestion}>Question 3</h3>
+                  <h3 onClick={handleQuestion} className={active.Question1}>Question 1</h3>
+                  <h3 onClick={handleQuestion} className={active.Question2}>Question 2</h3>
+                  <h3 onClick={handleQuestion} className={active.Question3}>Question 3</h3>
                 </nav>
 
                 <MathJax>
